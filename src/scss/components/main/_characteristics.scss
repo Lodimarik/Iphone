@@ -1,0 +1,59 @@
+@import "../../cta.scss";
+@import "../../mixin.scss";
+
+.characteristics{
+    margin-top: 15rem;
+    .content{
+        margin-top: 10rem;
+        display: flex;
+        align-items: center;
+        .left{
+            img{
+                width: 400px;
+            }
+        }
+        .right{
+            margin-left: 25rem;
+            margin-bottom: 3rem;
+            .characteristic{
+                margin-top: 2.5rem;
+                font-family: 'Inter';
+                font-size: $fz-xmedium;
+                font-weight: 500;
+            }
+            span{
+                color: #6e6e73;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .characteristics{
+        .content{
+            .left{
+                img{
+                    width: 300px;
+                }
+            }
+            .right{
+                margin-left: 3rem;
+                .characteristic{
+                    margin-top: 1.5rem;
+                    font-size: $fz-medium;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:360px) {
+    .characteristics{
+        .content{
+            @include flex-column();
+            .right{
+                margin-top: 3rem;
+            }
+        }
+    }
+}

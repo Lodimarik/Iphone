@@ -1,0 +1,104 @@
+@import "../../cta.scss";
+@import "../../mixin.scss";
+
+.Iphone-show {
+    margin-top: 15rem;
+    @include flex-row();
+    .content-Iphone {
+        .title-Iphone {
+            font-weight: 400;
+            font-size: 7.7rem;
+        }
+        .text {
+            margin-top: 2rem;
+            width: 1048px;
+            font-size: 3.5rem;
+            font-family: "Inter";
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1.6rem 5rem;
+            border-radius: $radius-btn;
+            border: $border;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: $transition-very-fast $ease-in-out;
+            &:hover {
+                opacity: 0.6;
+                transform: scale(0.99);
+                -webkit-transform: scale(0.99);
+                -moz-transform: scale(0.99);
+                -ms-transform: scale(0.99);
+                -o-transform: scale(0.99);
+            }
+
+            &:active {
+                transform: scale(0.97);
+                -webkit-transform: scale(0.97);
+                -moz-transform: scale(0.97);
+                -ms-transform: scale(0.97);
+                -o-transform: scale(0.97);
+            }
+        }
+    }
+
+    .Img-Iphone {
+        img {
+            width: 350px;
+            height: 590px;
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .Iphone-show {
+        .content-Iphone {
+            .title-Iphone {
+                font-size: 5.5rem;
+            }
+            .text{
+                width: 930px;
+                font-size: $fz-large;
+            }
+        }
+    }
+}
+
+@media  (max-width: 768px) {
+    .Iphone-show{
+        @include flex-column-reverse();
+        .content-Iphone{
+            text-align: center;
+            .title-Iphone{
+            }
+            .text{
+                width: 700px;
+                font-size: $fz-medium;
+            }
+        }
+    }
+}
+
+@media (max-width:360px) {
+    .Iphone-show{
+        .Img-Iphone{
+            img{
+                width: 205px;
+                height: 280px;
+            }
+        }
+        .content-Iphone{
+            margin-top: 3rem;
+            .title-Iphone{
+                font-size: $fz-xlarge;
+            }
+            .text{
+                margin-top: 1rem;
+                width: 300px;
+                font-size: $fz-small;
+            }
+        }
+    }
+}

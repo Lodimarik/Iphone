@@ -1,0 +1,147 @@
+@import "../../cta.scss";
+@import "../../mixin.scss";
+
+.categories {
+    margin-top: 10rem;
+    .title {
+        text-align: center;
+        font-size: $fz-xlarge;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    .categories-holder {
+        margin-top: 10rem;
+        display: grid;
+        grid-template-areas:
+            "a b c c"
+            "a b c c"
+            "a b d d";
+        gap: 4rem 2rem;
+        .category-card {
+            box-shadow: $shadow;
+            transition: 0.2s $ease-in-out;
+            &:hover {
+                transform: scale(0.98);
+                -webkit-transform: scale(0.98);
+                -moz-transform: scale(0.98);
+                -ms-transform: scale(0.98);
+                -o-transform: scale(0.98);
+            }
+            .card-content {
+                padding: 2rem;
+                span {
+                    font-size: $fz-small;
+                    color: $clr-dark-grey;
+                }
+                .title-card {
+                    font-size: $fz-medium;
+                    font-weight: 400;
+                }
+            }
+            .pic {
+                img {
+                    width: 28rem;
+                }
+            }
+        }
+        .one {
+            grid-area: a;
+            @include flex-column();
+            .card-content {
+                margin-top: 2rem;
+                text-align: center;
+            }
+        }
+        .two {
+            grid-area: b;
+            @include flex-column-reverse();
+            .card-content {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+        }
+        .three {
+            padding: 2rem;
+            grid-area: c;
+            .card-content {
+                margin-bottom: 2rem;
+                text-align: end;
+                .title-card {
+                }
+            }
+        }
+        .four {
+            padding: 2rem;
+            grid-area: d;
+            @include flex-row();
+            .card-content {
+                margin-bottom: 2rem;
+                text-align: end;
+            }
+            .pic {
+                img {
+                    width: 35rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .categories {
+        .categories-holder {
+            grid-template-areas:
+                "a b"
+                "a b"
+                "a b"
+                "c c"
+                "c c"
+                "d d";
+            .category-card {
+                .pic {
+                    img {
+                        width: 250px;
+                    }
+                    .other-img {
+                        width: 330px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .categories {
+        .categories-holder {
+            grid-template-areas: 
+            "a"
+            "a"
+            "a"
+            "b"
+            "b"
+            "b"
+            "c"
+            "c"
+            "c"
+            "d"
+            "d"
+            "d";
+            .category-card{
+                .title-card{
+                    text-align: center;
+                }
+                .pic{
+                    margin-top: 2rem;
+                    .other-img{
+                        width: 268px;
+                    }
+                }
+            }
+
+            .four{
+                @include flex-column();
+            }
+        }
+    }
+}

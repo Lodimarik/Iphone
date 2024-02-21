@@ -1,0 +1,98 @@
+@import "../../cta.scss";
+@import "../../mixin.scss";
+
+.models {
+    margin-top: 15rem;
+    .title {
+        text-align: center;
+        font-size: $fz-xlarge;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    .items-holder {
+        margin-top: 10rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+        gap: 4rem;
+        .item {
+            @include flex-column ();
+            transition: $transition-fast $ease-in-out;
+
+            &:hover{
+                border-radius: $raduis-card;
+                box-shadow: $shadow;
+                transform: scale(1.03);
+                -webkit-transform: scale(1.03);
+                -moz-transform: scale(1.03);
+                -ms-transform: scale(1.03);
+                -o-transform: scale(1.03);
+                -webkit-border-radius: $raduis-card;
+                -moz-border-radius: $raduis-card;
+                -ms-border-radius: $raduis-card;
+                -o-border-radius: $raduis-card;
+}
+            .item-img {
+                margin-top: 2rem;
+                img {
+                    width: 350px;
+                    height: 350px;
+                }
+            }
+
+            .content-item {
+                padding: 2rem;
+                .title-item {
+                    margin-top: 2rem;
+                    text-align: center;
+                    font-size: $fz-medium;
+                }
+                .text-item {
+                    margin-top: 1rem;
+                    font-size: $fz-small;
+                    font-family: "Inter";
+                }
+
+                .cost {
+                    text-align: end;
+                    margin-right: 3rem;
+                    margin-top: 2rem;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .models{
+        .items-holder{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .models{
+        .items-holder{
+            gap: 2rem;
+            .item{
+                .item-img{
+                    img{
+                        width: 300px;
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:360px) {
+    .models{
+        .items-holder{
+            grid-template-columns: repeat(1, 1fr);
+            gap: 4rem;
+        }
+    }
+}
